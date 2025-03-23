@@ -238,7 +238,7 @@ function App() {
               </li>
               <li className="hover:translate-x-1 duration-300">
                 {" "}
-                🎨 Experience in building frontend projects
+                🎨 Experience in building frontend projects with React.js
               </li>
               <li className="hover:translate-x-1 duration-300">
                 🌐 Learning backend - API development and database management
