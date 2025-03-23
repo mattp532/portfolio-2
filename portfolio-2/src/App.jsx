@@ -8,7 +8,7 @@ import lingifyProj from "./assets/lingifyProj.png";
 import pokestudyProj from "./assets/pokestudyProj.png";
 import composerdleProj from "./assets/composerdleProj.png";
 import portfolioProj from "./assets/portfolioProj.png";
-import resume from './assets/Resume.pdf';
+import resume from "./assets/Resume.pdf";
 import { motion } from "framer-motion";
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
             }}
           >
             <motion.h1 className="fade-down font-bold text-4xl">
-            👋 Hi, I'm Matthew
+              👋 Hi, I'm Matthew
             </motion.h1>
             <h2 className=" text-xl text-gray-300 font-normal mt-3 ">
               CS Student & Software Developer
@@ -110,10 +110,7 @@ function App() {
                 </svg>
               </a>
             </div>
-            <div
-              className="tooltip tooltip-bottom"
-              data-tip="Email"
-            >
+            <div className="tooltip tooltip-bottom" data-tip="Email">
               <a
                 className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 hover:bg-[rgb(30,30,30)] duration-200 "
                 href="mailto:matthew.phang@torontomu.ca"
@@ -138,48 +135,48 @@ function App() {
               <a
                 className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-auto px-2 h-10 flex justify-center items-center hover:opacity-100 hover:bg-[rgb(30,30,30)] duration-200 "
                 href={resume}
-                target="_blank"  // Open in a new tab
-                rel="noopener noreferrer"  // For security reasons when using target="_blank"
+                target="_blank" // Open in a new tab
+                rel="noopener noreferrer" // For security reasons when using target="_blank"
               >
                 <p>Resume</p>
               </a>
             </div>
           </motion.div>
-          <motion.div 
-                  initial={{ y:20, opacity:0}}      
-                  animate={{ y:0, opacity:1}}        
-                  transition={{
-                    duration: 0.6,             
-                    ease: "easeOut",            
-                  }}
-          
-          className="mt-10">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className="mt-10"
+          >
             <h1 className="font-bold text-2xl">About me</h1>
             <ul className="list-disc space-y-2 mt-2">
               <li className="hover:translate-x-1 duration-300">
-              🖥️ 1st year CS student @TMU
-              </li>
-              <li className="hover:translate-x-1 duration-300">               🎨 Experience in building frontend projects
+                🖥️ 1st year CS student @TMU
               </li>
               <li className="hover:translate-x-1 duration-300">
-              🌐 Learning backend - API development and database management
+                {" "}
+                🎨 Experience in building frontend projects
               </li>
               <li className="hover:translate-x-1 duration-300">
-              🎶 I also like making music and learning Cantonese :-)
+                🌐 Learning backend - API development and database management
               </li>
-              
+              <li className="hover:translate-x-1 duration-300">
+                🎶 I also like making music and learning Cantonese :-)
+              </li>
             </ul>
           </motion.div>
-          <motion.div 
-                  initial={{ y:40, opacity:0}}      
-                  animate={{ y:0, opacity:1}}        
-                  transition={{
-                    duration: 0.6,             
-                    ease: "easeOut",            
-                  }}
-          
-          
-          className="mt-10 pb-20">
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className="mt-10 pb-20"
+          >
             <h1 className="font-bold text-2xl">Projects</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6 mt-6 ">
               {/* Project 1 */}

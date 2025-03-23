@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
+ul, ol {
+    list-style-position: outside;
+    list-style-type: disc;
+  }
+  body {
+    line-height: 1.6;
+    background-color: #121212;
+    color: white; 
+    margin: 0;
+    padding: 0;
+  }  
