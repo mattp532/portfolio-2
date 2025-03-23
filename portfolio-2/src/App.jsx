@@ -31,8 +31,8 @@ function App() {
             />
             <div className="absolute top-4/100 left-9/100 flex lg: left-12/100 xl:left-24/100">
               <motion.img
-                initial={{ scale: 1, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
+                initial={{opacity: 0 }}
+                animate={{opacity: 1 }}
                 transition={{
                   duration: 0.6,
                   ease: "easeOut",
@@ -193,7 +193,7 @@ function App() {
                     <h2 className="card-title font-semibold text-xl">
                       Composerdle
                     </h2>
-                    <p>Description of project 2 goes here.</p>
+                    <p>Full-stack wordle for classical composers</p>
                   </div>
                 </div>
               </a>
@@ -212,7 +212,7 @@ function App() {
                     <h2 className="card-title font-semibold text-xl">
                       Lingify
                     </h2>
-                    <p>Description of project 2 goes here.</p>
+                    <p>Language learning quiz app</p>
                   </div>
                 </div>
               </a>
@@ -231,7 +231,7 @@ function App() {
                     <h2 className="card-title font-semibold text-xl">
                       PokéStudy
                     </h2>
-                    <p>Description of project 2 goes here.</p>
+                    <p>Study timer where you collect pokemon</p>
                   </div>
                 </div>
               </a>
@@ -252,7 +252,7 @@ function App() {
                     <h2 className="card-title font-semibold text-xl">
                       Windows 95 Portfolio
                     </h2>
-                    <p>Description of project 2 goes here.</p>
+                    <p>Retro, Windows 95 desktop themed portfolio</p>
                   </div>
                 </div>
               </a>
