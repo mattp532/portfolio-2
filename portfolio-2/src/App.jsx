@@ -35,7 +35,7 @@ function App() {
             : "bg-gray-100 text-black"
         }`}
       >
-        <div className="mb-21 xl:mb-18 lg-18 xl-18">
+        <div className="mb-23 sm:mb-18 xl:mb-18 lg-18 xl-18">
           <div className="header max-h-20/100">
             <img
               src={banner}
@@ -51,7 +51,7 @@ function App() {
                   ease: "easeOut",
                 }}
                 key="pfp"
-                className="hover:scale-105 duration-300 z-10 h-28 w-28 sm:h-32 sm:w-32 md:h-33 md:w-33 lg:w-40 lg:h-40 xl:h-35 xl:w-35 rounded-full border-2 border-gray-500"
+                className="hover:scale-105 duration-300 z-10 h-30 w-30 sm:h-32 sm:w-32 md:h-33 md:w-33 lg:w-40 lg:h-40 xl:h-35 xl:w-35 rounded-full border-2 border-gray-500"
                 src={pfp}
                 alt=""
               />
@@ -67,22 +67,20 @@ function App() {
               ease: "easeOut",
             }}
           >
-            <div>
+            <div className="w-10%">
               <motion.h1
                 className="flex items-center w-auto fade-down font-bold text-3xl md:text-4xl lg:text-4xl xl:text-4xl"
                 style={{
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
+
                 }}
               >
                 <motion.span>👋</motion.span>
                 <span 
                 
-                className={`typing ml-1 ${theme === "dark" ? "dark" : "light"}`}
+                className={`w-auto typing ml-1 ${theme === "dark" ? "dark" : "light"}`}
                 style={{
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  borderColor:"black"
+                  display: "inline" /* or inline-block */
+
                 }}
                 >
 
@@ -116,12 +114,11 @@ function App() {
                 target="_blank"
               >
                 <svg
-                  className=""
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
                   height="25"
                   viewBox="0 0 24 24"
-                  class="size-5 md:size-6"
+                  className="size-5 md:size-6"
                 >
                   <path
                     fill="currentColor"
@@ -141,7 +138,7 @@ function App() {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  class="size-5 md:size-6"
+                  className="size-5 md:size-6"
                 >
                   <path
                     fill="currentColor"
@@ -161,11 +158,11 @@ function App() {
                   width="1em"
                   height="1em"
                   viewBox="0 0 20 20"
-                  class="size-5 md:size-6"
+                  className="size-5 md:size-6"
                 >
                   <path
                     fill="currentColor"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="m7.172 11.334l2.83 1.935l2.728-1.882l6.115 6.033c-.161.052-.333.08-.512.08H1.667c-.22 0-.43-.043-.623-.12zM20 6.376v9.457c0 .247-.054.481-.15.692l-5.994-5.914zM0 6.429l6.042 4.132l-5.936 5.858A1.663 1.663 0 0 1 0 15.833zM18.333 2.5c.92 0 1.667.746 1.667 1.667v.586L9.998 11.648L0 4.81v-.643C0 3.247.746 2.5 1.667 2.5z"
                   ></path>
                 </svg>
@@ -196,13 +193,13 @@ function App() {
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="currentColor"
-                      class="size-6"
+                      className="size-6"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
                       />
                     </svg>
