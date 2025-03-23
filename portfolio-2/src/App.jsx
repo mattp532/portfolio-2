@@ -10,19 +10,32 @@ import composerdleProj from "./assets/composerdleProj.png";
 import portfolioProj from "./assets/portfolioProj.png";
 import resume from "./assets/Resume.pdf";
 import { motion } from "framer-motion";
+import Language from "./Language.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
   const [showTooltip, setShowTooltip] = useState(false);
   const email = "matthew.phang@torontomu.ca"; // Replace with your actual email
-
-  const copyEmailToClipboard = () => {
-    navigator.clipboard.writeText(email);
+  const [theme, setTheme] = useState("dark");
+  const handleThemeChange = () => {
+    if (theme == "dark") {
+      setTheme("light");
+    } else if (theme == "light") {
+      setTheme("dark");
+    }
   };
+  const cursorColor = theme === "dark" ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)";
+
   return (
     <>
-      <div className="mx-auto">
-        <div className="mb-20 lg-18 xl-18">
+      <div
+        className={`border-opacity-50 bg-[rgb(30,30,30)] duration-200 ${
+          theme === "dark"
+            ? "bg-gray-1000 text-white"
+            : "bg-gray-100 text-black"
+        }`}
+      >
+        <div className="mb-21 xl:mb-18 lg-18 xl-18">
           <div className="header max-h-20/100">
             <img
               src={banner}
@@ -31,12 +44,13 @@ function App() {
             />
             <div className="absolute top-4/100 left-9/100 flex lg: left-12/100 xl:left-24/100">
               <motion.img
-                initial={{opacity: 0 }}
-                animate={{opacity: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   duration: 0.6,
                   ease: "easeOut",
                 }}
+                key="pfp"
                 className="hover:scale-105 duration-300 z-10 h-28 w-28 sm:h-32 sm:w-32 md:h-33 md:w-33 lg:w-40 lg:h-40 xl:h-35 xl:w-35 rounded-full border-2 border-gray-500"
                 src={pfp}
                 alt=""
@@ -49,14 +63,40 @@ function App() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 100, y: 0 }}
             transition={{
-              duration: 0.5, // Shorter, but smooth duration
-              ease: "easeOut", // Smooth, ease-out timing function
+              duration: 0.5,
+              ease: "easeOut",
             }}
           >
-            <motion.h1 className="fade-down font-bold text-4xl">
-              👋 Hi, I'm Matthew
-            </motion.h1>
-            <h2 className=" text-xl text-gray-300 font-normal mt-3 ">
+            <div>
+              <motion.h1
+                className="flex items-center w-auto fade-down font-bold text-3xl md:text-4xl lg:text-4xl xl:text-4xl"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                }}
+              >
+                <motion.span>👋</motion.span>
+                <span 
+                
+                className={`typing ml-1 ${theme === "dark" ? "dark" : "light"}`}
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  borderColor:"black"
+                }}
+                >
+
+  Hi, I'm Matthew
+</span>
+
+              </motion.h1>
+            </div>
+            <h2
+              className={` text-xl font-normal mt-3 
+              
+              ${theme === "dark" ? "text-gray-300 " : "text-black"}
+              `}
+            >
               CS Student & Software Developer
             </h2>
           </motion.div>
@@ -71,7 +111,7 @@ function App() {
           >
             <div className="tooltip tooltip-bottom" data-tip="Github">
               <a
-                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 hover:bg-[rgb(30,30,30)] duration-200 "
+                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 duration-200 "
                 href="https://github.com/mattp532"
                 target="_blank"
               >
@@ -92,7 +132,7 @@ function App() {
             </div>
             <div className="tooltip tooltip-bottom" data-tip="Linkedin">
               <a
-                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 hover:bg-[rgb(30,30,30)] duration-200 "
+                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 duration-200 "
                 href="https://www.linkedin.com/in/matthew-phang-b4a60a326/"
                 target="_blank"
               >
@@ -112,7 +152,7 @@ function App() {
             </div>
             <div className="tooltip tooltip-bottom" data-tip="Email">
               <a
-                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 hover:bg-[rgb(30,30,30)] duration-200 "
+                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-10 h-10 flex justify-center items-center hover:opacity-100 duration-200 "
                 href="mailto:matthew.phang@torontomu.ca"
                 target="_blank"
               >
@@ -133,13 +173,57 @@ function App() {
             </div>
             <div className="tooltip tooltip-bottom" data-tip="Resume">
               <a
-                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-auto px-2 h-10 flex justify-center items-center hover:opacity-100 hover:bg-[rgb(30,30,30)] duration-200 "
+                className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-auto px-2 h-10 flex justify-center items-center hover:opacity-100 duration-200 "
                 href={resume}
                 target="_blank" // Open in a new tab
-                rel="noopener noreferrer" // For security reasons when using target="_blank"
+                rel="noopener noreferrer"
               >
                 <p>Resume</p>
               </a>
+            </div>
+            <div
+              className={`cursor-pointer tooltip tooltip-bottom
+  `}
+              data-tip="Theme"
+            >
+              <button
+                className={`cursor-pointer opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-auto px-2 h-10 flex justify-center items-center hover:opacity-100 duration-200 `}
+                onClick={handleThemeChange}
+              >
+                <p>
+                  {theme === "dark" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                      />
+                    </svg>
+                  )}
+                </p>
+              </button>
             </div>
           </motion.div>
           <motion.div
@@ -152,7 +236,7 @@ function App() {
             className="mt-10"
           >
             <h1 className="font-bold text-2xl">About me</h1>
-            <ul className="list-disc space-y-2 mt-2">
+            <ul className="list-disc space-y-2 mt-2 ">
               <li className="hover:translate-x-1 duration-300">
                 🖥️ 1st year CS student @TMU
               </li>
@@ -178,10 +262,16 @@ function App() {
             className="mt-10 pb-20"
           >
             <h1 className="font-bold text-2xl">Projects</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6 mt-6 ">
+            <div
+              className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6 mt-6 
+                            ${
+                              theme === "dark" ? "text-gray-300 " : "text-black"
+                            }
+              `}
+            >
               {/* Project 1 */}
               <a target="_blank" href="https://github.com/mattp532/Composerdle">
-                <div className="card bg-[rgb(24, 24, 24)] text-white rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
+                <div className="card bg-[rgb(24, 24, 24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
                   <figure>
                     <img
                       className="object-cover w-full h-40 object-top"
@@ -195,12 +285,20 @@ function App() {
                     </h2>
                     <p>Full-stack wordle for classical composers</p>
                   </div>
+                  <div className="flex flex-wrap l-2">
+                    <Language colour="purple" language="React"></Language>
+                    <Language colour="yellow" language="Express"></Language>
+                    <Language
+                      colour="#A3C9FF"
+                      language="PostgreSQL"
+                    ></Language>{" "}
+                  </div>
                 </div>
               </a>
 
               {/* Project 2 */}
               <a target="_blank" href="https://mattp532.github.io/Lingify/ ">
-                <div className="card bg-[rgb(24, 24, 24)] text-white rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103 ">
+                <div className="card bg-[rgb(24, 24, 24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103 ">
                   <figure>
                     <img
                       className="object-cover w-full h-40"
@@ -214,12 +312,16 @@ function App() {
                     </h2>
                     <p>Language learning quiz app</p>
                   </div>
+                  <div className="flex ml-2">
+                    <Language colour="purple" language="React"></Language>
+                    <Language colour="yellow" language="Javascript"></Language>
+                  </div>
                 </div>
               </a>
 
               {/* Project 3 */}
               <a target="_blank" href="https://mattp532.github.io/PokeStudy/">
-                <div className="card bg-[rgb(24, 24, 24)] text-white rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
+                <div className="card bg-[rgb(24, 24, 24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
                   <figure>
                     <img
                       className="object-cover w-full object-middle h-40 "
@@ -233,6 +335,9 @@ function App() {
                     </h2>
                     <p>Study timer where you collect pokemon</p>
                   </div>
+                  <div className="flex ml-2">
+                    <Language colour="yellow" language="Javascript"></Language>
+                  </div>
                 </div>
               </a>
               {/* Project 4 */}
@@ -240,7 +345,7 @@ function App() {
                 target="_blank"
                 href="https://mattp532.github.io/react-portfolio/"
               >
-                <div className="card bg-[rgb(24, 24, 24)] text-white rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
+                <div className="card bg-[rgb(24, 24, 24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
                   <figure>
                     <img
                       className="object-cover w-full object-middle h-40"
@@ -252,7 +357,11 @@ function App() {
                     <h2 className="card-title font-semibold text-xl">
                       Windows 95 Portfolio
                     </h2>
-                    <p>Retro, Windows 95 desktop themed portfolio</p>
+                    <p>Retro desktop themed portfolio</p>
+                  </div>
+                  <div className="flex ml-2">
+                    <Language colour="purple" language="React"></Language>
+                    <Language colour="yellow" language="Javascript"></Language>
                   </div>
                 </div>
               </a>
