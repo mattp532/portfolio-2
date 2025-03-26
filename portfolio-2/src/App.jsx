@@ -8,6 +8,7 @@ import lingifyProj from "./assets/lingifyProj.png";
 import pokestudyProj from "./assets/pokestudyProj.png";
 import composerdleProj from "./assets/composerdleProj.png";
 import portfolioProj from "./assets/portfolioProj.png";
+import guitarAmpProj from "./assets/guitarAmpProj.png";
 import resume from "./assets/Resume.pdf";
 import { motion } from "framer-motion";
 import Language from "./Language.jsx";
@@ -287,6 +288,32 @@ function App() {
                     <Language
                       colour="#A3C9FF"
                       language="PostgreSQL"
+                    ></Language>{" "}
+                  </div>
+                </div>
+              </a>
+              {/* Project 1.5 */}
+              <a target="_blank" href="https://github.com/mattp532/Guitar-Amp-Simulator">
+                <div className="card bg-[rgb(24, 24, 24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
+                  <figure>
+                    <img
+                      className="object-cover w-full h-40 object-top"
+                      src={guitarAmpProj}
+                      alt=""
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title font-semibold text-xl">
+                      Virtual Guitar Amp
+                    </h2>
+                    <p>Guitar effect processor</p>
+                  </div>
+                  <div className="flex flex-wrap l-2">
+                    <Language colour="purple" language="React"></Language>
+                    <Language colour="blue" language="Flask"></Language>
+                    <Language
+                      colour="yellow"
+                      language="MongoDB"
                     ></Language>{" "}
                   </div>
                 </div>
