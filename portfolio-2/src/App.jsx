@@ -244,6 +244,7 @@ function App() {
               <li className="hover:translate-x-1 duration-300">
                 🌐 Learning backend - API development and database management
               </li>
+              <li>🏃 Learning Go</li>
               <li className="hover:translate-x-1 duration-300">
                 🎶 I also like making music and learning Cantonese :-)
               </li>
