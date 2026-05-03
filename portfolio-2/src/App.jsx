@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home.jsx";
 import Projects from "./pages/Projects.jsx";
+import Footer from "./Footer.jsx";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -52,6 +53,9 @@ function App() {
             <Route path="/" element={<Home theme={theme} />} />
             <Route path="/projects" element={<Projects theme={theme} />} />
           </Routes>
+
+          {/* Footer with social links */}
+          <Footer theme={theme} />
 
         </div>
       </div>
