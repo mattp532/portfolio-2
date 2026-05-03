@@ -41,20 +41,22 @@ export default function Footer({ theme }) {
   ];
 
   return (
-    <div className="flex gap-2 mt-6 justify-start">
-      {links.map((link) => (
-        <a
-          key={link.label}
-          className={`opacity-70 rounded-md border border-gray-500 border-opacity-50 flex justify-center items-center hover:opacity-100 duration-200 ${
-            link.isIcon ? "w-10 h-10" : "px-4 py-2"
-          }`}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.svg}
-        </a>
-      ))}
+    <div className="mt-6 pt-2">
+      <div className="flex gap-2 justify-start">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            className={`opacity-70 rounded-md border border-gray-500 border-opacity-50 flex justify-center items-center hover:opacity-100 duration-200 ${
+              link.isIcon ? "w-9 h-9" : "h-9 px-3 text-[13px] whitespace-nowrap leading-none"
+            }`}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.svg}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

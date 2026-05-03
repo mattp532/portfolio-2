@@ -1,13 +1,20 @@
 import Language from "../Language.jsx";
+import { useState } from "react";
 
 export default function ProjectCard({ project, theme }) {
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <a target="_blank" href={project.href} rel="noopener noreferrer">
-      <div className="card bg-[rgb(24,24,24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103">
+      <div 
+        className="card bg-[rgb(24,24,24)] rounded-lg border-1 border-gray-600 duration-300 transition-all hover:scale-103"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
         <figure>
           <img
             className="object-cover w-full h-40"
-            src={project.image}
+            src={isHovering && project.hoverImage ? project.hoverImage : project.image}
             alt={project.title}
             style={project.objectPosition ? { objectPosition: project.objectPosition } : {}}
           />
@@ -20,7 +27,7 @@ export default function ProjectCard({ project, theme }) {
             {project.description}
           </p>
         </div>
-        <div className="flex ml-2">
+        <div className="flex ">
           {project.languages.map((lang) => (
             <Language
               key={lang.name}

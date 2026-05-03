@@ -18,7 +18,14 @@ function App() {
 <div className={`w-full max-w-2xl mx-4 sm:mx-auto rounded-xl border border-gray-700 border-opacity-50 p-8 ${theme === "dark" ? "bg-[rgb(18,18,18)]" : "bg-white"}`}>
           {/* Card header */}
           <div className="flex justify-between items-center mb-8">
-            <h1 className="font-bold text-md">Matthew Phang</h1>
+            <div className="flex items-center gap-3">
+              <h1 className="font-bold text-md">Matthew Phang</h1>
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-[42px] h-[42px] object-contain"
+              />
+            </div>
             <div className="flex items-center gap-6">
 <nav className="flex gap-4 text-sm">
 <NavLink

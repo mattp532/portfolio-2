@@ -1,7 +1,10 @@
 import ProjectCard from "../components/ProjectCard.jsx";
 import beaverbuddyProj from "../assets/beaverbuddyProj.png";
+import beaverbuddyProjGif from "../assets/beaverBuddyProjGif.gif";
 import metgamesProj from "../assets/metgames_logo.png";
+import metgamesProjGif from "../assets/metGamesProjGif.gif";
 import eventfullProj from "../assets/eventfullProj.png";
+import eventfullProjGif from "../assets/eventfullProj.gif";
 import portfolioProj from "../assets/portfolioProj.png";
 import { motion } from "framer-motion";
 
@@ -11,6 +14,7 @@ export default function Projects({ theme }) {
       id: "beaverbuddy",
       title: "BeaverBuddy",
       image: beaverbuddyProj,
+      hoverImage: beaverbuddyProjGif,
       href: "https://github.com/Build-your-bridge/BeaverBuddy",
       description: "AI-Powered wellness app for Canadian Immigrants. Won $3000 and 1st place for Mental Health and Wellbeing at Build a Bridge 2026",
       languages: [
@@ -23,6 +27,7 @@ export default function Projects({ theme }) {
       id: "eventfull",
       title: "EventFull",
       image: eventfullProj,
+      hoverImage: eventfullProjGif,
       href: "https://github.com/LooperLoopy/EventFull",
       description: "AI assistant + interactive heat-map for Toronto event planning",
       objectPosition: "center middle",
@@ -39,6 +44,7 @@ export default function Projects({ theme }) {
       id: "metgames",
       title: "Met Game Studios",
       image: metgamesProj,
+      hoverImage: metgamesProjGif,
       href: "https://metropolitangamestudios.ca/",
       description: "Redesigned and built site from scratch",
       languages: [{ name: "Next.js", colour: "purple" }],
